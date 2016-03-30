@@ -1,4 +1,4 @@
-const mapObject = require('./lib/mapObject');
+const map = require('./lib/map');
 
 // todo: надо ли делать полностью новый объект? чтобы при изменении любого свойства оно не менялось в исходном объекте
 
@@ -11,9 +11,9 @@ const mapObject = require('./lib/mapObject');
 module.exports = function(schemaOrObject, schema) {
     if (schema === undefined) {
         return function(object) {
-            return mapObject(object, schemaOrObject, object, []);
+            return map(object, schemaOrObject, object, []);
         };
     }
     
-    return mapObject(schemaOrObject, schema, schemaOrObject, []);
+    return map(schemaOrObject, schema, schemaOrObject, []);
 };
