@@ -6,7 +6,7 @@ const map = require('./lib/map');
  * @param {Object} schemaOrObject
  * @param {Object} [schema]
  *
- * @returns {Object}
+ * @returns {Function|Object}
  */
 module.exports = function(schemaOrObject, schema) {
     if (schema === undefined) {
