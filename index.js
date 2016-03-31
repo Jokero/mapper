@@ -1,19 +1,20 @@
 const map = require('./lib/map');
 
 // todo: надо ли делать полностью новый объект? чтобы при изменении любого свойства оно не менялось в исходном объекте
+// поддержка массивов
 
 /**
- * @param {Object} schemaOrObject
- * @param {Object} [schema]
+ * @param {Object|Object[]} schemaOrValue
+ * @param {Object}          [schema]
  *
- * @returns {Object}
+ * @returns {Function|Object}
  */
-module.exports = function(schemaOrObject, schema) {
+module.exports = function(schemaOrValue, schema) {
     if (schema === undefined) {
-        return function(object) {
-            return map(object, schemaOrObject, object, []);
+        return function(value) {
+            return map(value, schemaOrValue);
         };
     }
-    
-    return map(schemaOrObject, schema, schemaOrObject, []);
+
+    return map(schemaOrValue, schema);
 };
