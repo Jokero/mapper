@@ -31,9 +31,6 @@ Result of mapping (object or array of objects)
 ```js
 const mapper = require('mapper');
 
-const object = { /* ... */ };
-const schema = { /* ... */ };
-
 const result = mapper(object, schema);
 ```
 
@@ -49,11 +46,7 @@ Mapping function which can be called with `value` further
 
 ```js
 const mapper = require('mapper');
-
-const schema = { /* ... */ };
 const map    = mapper(schema);
-
-const object = { /* ... */ };
 
 const result = map(object);
 ```
@@ -96,7 +89,7 @@ const user = {
 };
 ```
 
-We want to send users data to clients in a different form:
+We want to send users data to clients in a different format:
 
 ```js
 {
@@ -117,9 +110,11 @@ We want to send users data to clients in a different form:
 }
 ```
 
-If we want to do this we should define schema:
+We can do it by using the schema:
 
 ```js
+const mapper = require('mapper');
+
 const userSchema = {
     // take field without any changes
     id: true, // or '=',
@@ -139,10 +134,10 @@ const userSchema = {
         email: '$.email', // or '=$.email'
 
         // function takes 4 arguments:
-        //   - current value of property
-        //   - current object
-        //   - original object
-        //   - path as array
+        //   - current value of property = user.contacts.facebook
+        //   - current object            = user.contacts
+        //   - original object           = user
+        //   - path as array             = ['contacts', 'facebook']
         facebook: function(facebook, contacts, user, path) {
             return user.socialNetworks.facebook;
         },
@@ -158,11 +153,6 @@ const userSchema = {
         }
     }]
 };
-```
-
-Code:
-```js
-const mapper = require('mapper');
 
 const result = mapper(user, userSchema); // or mapper(userSchema)(user)
 ```
