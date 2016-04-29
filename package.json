@@ -1,6 +1,6 @@
 {
     "name":    "mapper",
-    "version": "0.0.1",
+    "version": "0.1.0",
 
     "author": {
         "name":  "Dmitry Kirilyuk",
@@ -16,5 +16,14 @@
 
     "engines": {
         "node": ">=4.0.0"
+    },
+
+    "devDependencies": {
+        "mocha": "2.4.5",
+        "chai":  "3.5.0"
+    },
+
+    "scripts": {
+        "test": "mocha 'tests/**/*.js' --timeout 5000"
     }
 }
