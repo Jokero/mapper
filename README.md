@@ -160,6 +160,13 @@ const userSchema = {
 };
 ```
 
+Code:
+```js
+const mapper = require('mapper');
+
+const result = mapper(user, userSchema); // or mapper(userSchema)(user)
+```
+
 ## Tests
 
 ```sh
