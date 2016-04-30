@@ -17,16 +17,16 @@ npm install mapper
 
 There are two ways to use module:
 
-### 1. mapper(value, schema): Object | Object[]
+### 1. mapper(value, schema)
 
 **Parameters**
 
-* `value` {Object | Object[]} - Object or array of objects to map
-* `schema` {Object} - Schema which define how to map object
+* `value` (Object | Object[]) - Object or array of objects to map
+* `schema` (Object) - Schema which define how to map object
 
 **Return value**
 
-Result of mapping (object or array of objects)
+(Object | Object[]) - Result of mapping (object or array of objects)
 
 ```js
 const mapper = require('mapper');
@@ -34,15 +34,15 @@ const mapper = require('mapper');
 const result = mapper(object, schema);
 ```
 
-### 2. mapper(schema): Function
+### 2. mapper(schema)
 
 **Parameters**
 
-* `schema` {Object} - Schema which define how to map object
+* `schema` (Object) - Schema which define how to map object
 
 **Return value**
 
-Mapping function which can be called with `value` further
+(Function): Mapping function which can be called with `value` further
 
 ```js
 const mapper = require('mapper');
