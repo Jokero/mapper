@@ -1,16 +1,16 @@
-# mapper
+# mapper.js
 
 Objects mapping using specified schema
 
-[![NPM version](https://img.shields.io/npm/v/mymapper.svg)](https://npmjs.org/package/mymapper)
-[![Build status](https://img.shields.io/travis/Jokero/mymapper.svg)](https://travis-ci.org/Jokero/mymapper)
+[![NPM version](https://img.shields.io/npm/v/mapper.js.svg)](https://npmjs.org/package/mapper.js)
+[![Build status](https://img.shields.io/travis/Jokero/mapper.js.svg)](https://travis-ci.org/Jokero/mapper.js)
 
 **Note:** This module will only work with Node.js >= 4.0.
 
 ## Installation
 
 ```sh
-npm install mapper
+npm install mapper.js
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ There are two ways to use module:
 (Object | Object[]) - Result of mapping (object or array of objects)
 
 ```js
-const mapper = require('mapper');
+const mapper = require('mapper.js');
 
 const result = mapper(object, schema);
 ```
@@ -45,7 +45,7 @@ const result = mapper(object, schema);
 (Function): Mapping function which can be called with `data` further
 
 ```js
-const mapper = require('mapper');
+const mapper = require('mapper.js');
 const map    = mapper(schema);
 
 const result = map(object);
@@ -113,7 +113,7 @@ We want to send users data to clients in a different format:
 We can do it by using the schema:
 
 ```js
-const mapper = require('mapper');
+const mapper = require('mapper.js');
 
 const userSchema = {
     // take field without any changes
