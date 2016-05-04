@@ -1,6 +1,7 @@
 {
-    "name":    "mapper.js",
-    "version": "0.1.0",
+    "name":        "mapper.js",
+    "description": "Transform object from one structure to another by using schema. It's useful in API when you want to modify data before sending it to clients",
+    "version":     "0.1.0",
 
     "author": {
         "name":  "Dmitry Kirilyuk",
@@ -13,6 +14,15 @@
     },
 
     "license": "MIT",
+
+    "keywords": [
+        "mapper",
+        "map",
+        "mapping",
+        "schema",
+        "object",
+        "api"
+    ],
 
     "engines": {
         "node": ">=4.0.0"

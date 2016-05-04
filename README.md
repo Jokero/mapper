@@ -1,6 +1,6 @@
 # mapper.js
 
-Objects mapping using specified schema
+Transform object from one structure to another by using schema. It's useful in API when you want to modify data before sending it to clients
 
 [![NPM version](https://img.shields.io/npm/v/mapper.js.svg)](https://npmjs.org/package/mapper.js)
 [![Build status](https://img.shields.io/travis/Jokero/mapper.js.svg)](https://travis-ci.org/Jokero/mapper.js)
