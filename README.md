@@ -17,11 +17,11 @@ npm install mapper
 
 There are two ways to use module:
 
-### 1. mapper(value, schema)
+### 1. mapper(data, schema)
 
 **Parameters**
 
-* `value` (Object | Object[]) - Object or array of objects to map
+* `data` (Object | Object[]) - Object or array of objects to map
 * `schema` (Object) - Schema which define how to map object
 
 **Return value**
@@ -42,7 +42,7 @@ const result = mapper(object, schema);
 
 **Return value**
 
-(Function): Mapping function which can be called with `value` further
+(Function): Mapping function which can be called with `data` further
 
 ```js
 const mapper = require('mapper');
@@ -71,7 +71,7 @@ const user = {
 
     socialNetworks: {
         vk: 'https://vk.com/peter.parker',
-        facebook: 'https://www.facebook.com/peter.parker',
+        facebook: 'https://www.facebook.com/peter.parker'
     },
 
     friends: [

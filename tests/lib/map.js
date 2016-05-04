@@ -1,21 +1,23 @@
+'use strict';
+
 const map    = require('../../lib/map');
 const expect = require('chai').expect;
 
 describe('map', function() {
-    it('returns array if value is array', function() {
-        const value       = [{ a: 1 }, { a: 2 }];
-        const schema      = { a: true };
-        const mappedValue = map(value, schema);
+    it('returns array of objects if value is array of objects', function() {
+        const data       = [{ a: 1 }, { a: 2 }];
+        const schema     = { a: true };
+        const mappedData = map(data, schema);
 
-        expect(mappedValue).to.be.an.instanceof(Array);
+        expect(mappedData).to.be.an.instanceof(Array);
     });
 
     it('returns object if value is object', function() {
-        const value       = { a: 1 };
-        const schema      = { a: true };
-        const mappedValue = map(value, schema);
+        const data       = { a: 1 };
+        const schema     = { a: true };
+        const mappedData = map(data, schema);
 
-        expect(mappedValue).to.be.an.instanceof(Object);
-        expect(mappedValue).to.not.be.an.instanceof(Array);
+        expect(mappedData).to.be.an.instanceof(Object);
+        expect(mappedData).to.not.be.an.instanceof(Array);
     });
 });
