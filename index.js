@@ -3,17 +3,17 @@
 const map = require('./lib/map');
 
 /**
- * @param {Object|Object[]} schemaOrValue
+ * @param {Object|Object[]} schemaOrData
  * @param {Object}          [schema]
  *
  * @returns {Function|Object|Object[]}
  */
-module.exports = function(schemaOrValue, schema) {
+module.exports = function(schemaOrData, schema) {
     if (!schema) {
         return function(value) {
-            return map(value, schemaOrValue);
+            return map(value, schemaOrData);
         };
     }
 
-    return map(schemaOrValue, schema);
+    return map(schemaOrData, schema);
 };
