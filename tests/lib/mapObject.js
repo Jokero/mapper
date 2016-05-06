@@ -19,28 +19,4 @@ describe('mapObject', function() {
 
         expect(mappedObject).to.deep.equal({ a: 'a' });
     });
-
-    it('calls toJSON() if present and uses returned value to map', function() {
-        const object = {
-            a: 'a',
-            b: 'b',
-
-            toJSON: () => ({
-                a: 'a2',
-                b: 'b2'
-            })
-        };
-
-        const schema = {
-            a: true,
-            b: true
-        };
-
-        const mappedObject = mapObject(object, schema);
-
-        expect(mappedObject).to.deep.equal({
-            a: 'a2',
-            b: 'b2'
-        });
-    });
 });
