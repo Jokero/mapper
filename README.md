@@ -5,7 +5,7 @@ Transform object from one structure to another by using schema. It's useful in A
 [![NPM version](https://img.shields.io/npm/v/mapper.js.svg)](https://npmjs.org/package/mapper.js)
 [![Build status](https://img.shields.io/travis/Jokero/mapper.js.svg)](https://travis-ci.org/Jokero/mapper.js)
 
-**Note:** This module will only work with Node.js >= 4.0.
+**Note:** This module works in browsers and Node.js >= 4.0.
 
 ## Installation
 
@@ -13,12 +13,23 @@ Transform object from one structure to another by using schema. It's useful in A
 npm install mapper.js
 ```
 
+### Node.js
+```js
+const mapper = require('mapper.js');
+```
+
+### Browser
+```
+<script src="node_modules/mapper.js/dist/mapper.js">
+```
+or minified version
+```
+<script src="node_modules/mapper.js/dist/mapper.min.js">
+```
+
+You can use the module with AMD/CommonJS or just use `window.mapper`.
+
 ## Usage
-
-Use `require('mapper.js')` in node.js.
-
-Use `<script src="mapper.js/dist/mapper.js">` or `<script src="mapper.js/dist/mapper.min.js">` in browser.
-If you use AMD system you can get it by `require('mapper.js')` else you can use `window.mapper`.
 
 There are two ways to use module:
 
