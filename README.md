@@ -15,7 +15,10 @@ npm install mapper.js
 
 ## Usage
 
-You can use mapper.js by `require('mapper.js')` in node.js or in browser with require.js. Also we can get it in browser as `window.mapper`.
+Use `require('mapper.js')` in node.js.
+
+Use `<script src="mapper.js/dist/mapper.js">` or `<script src="mapper.js/dist/mapper.min.js">` in browser.
+If you use AMD system you can get it by `require('mapper.js')` else you can use `window.mapper`.
 
 There are two ways to use module:
 
