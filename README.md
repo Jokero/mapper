@@ -15,6 +15,8 @@ npm install mapper.js
 
 ## Usage
 
+You can use mapper.js by `require('mapper.js')` in node.js or in browser with require.js. Also we can get it in browser as `window.mapper`.
+
 There are two ways to use module:
 
 ### 1. mapper(data, schema)
@@ -155,6 +157,13 @@ const userSchema = {
 };
 
 const result = mapper(user, userSchema); // or mapper(userSchema)(user)
+```
+
+## Build
+
+```sh
+npm install
+npm run build
 ```
 
 ## Tests
