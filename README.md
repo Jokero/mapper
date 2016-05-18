@@ -5,13 +5,29 @@ Transform object from one structure to another by using schema. It's useful in A
 [![NPM version](https://img.shields.io/npm/v/mapper.js.svg)](https://npmjs.org/package/mapper.js)
 [![Build status](https://img.shields.io/travis/Jokero/mapper.js.svg)](https://travis-ci.org/Jokero/mapper.js)
 
-**Note:** This module will only work with Node.js >= 4.0.
+**Note:** This module works in browsers and Node.js >= 4.0.
 
 ## Installation
 
 ```sh
 npm install mapper.js
 ```
+
+### Node.js
+```js
+const mapper = require('mapper.js');
+```
+
+### Browser
+```
+<script src="node_modules/mapper.js/dist/mapper.js">
+```
+or minified version
+```
+<script src="node_modules/mapper.js/dist/mapper.min.js">
+```
+
+You can use the module with AMD/CommonJS or just use `window.mapper`.
 
 ## Usage
 
@@ -155,6 +171,13 @@ const userSchema = {
 };
 
 const result = mapper(user, userSchema); // or mapper(userSchema)(user)
+```
+
+## Build
+
+```sh
+npm install
+npm run build
 ```
 
 ## Tests
