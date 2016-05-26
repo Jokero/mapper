@@ -38,7 +38,7 @@ There are two ways to use module:
 **Parameters**
 
 * `data` (Object | Object[]) - Object or array of objects to map
-* `schema` (Object) - Schema which define how to map object
+* `schema` (Object) - Schema which defines how to map object
 
 **Return value**
 
