@@ -1,7 +1,7 @@
 {
     "name":        "mapper.js",
     "description": "Transform object from one structure to another by using schema. It's useful in API when you want to modify data before sending it to clients",
-    "version":     "0.2.2",
+    "version":     "0.2.1",
 
     "author": {
         "name":  "Dmitry Kirilyuk",
@@ -30,6 +30,13 @@
 
     "main": "./lib/mapper.js",
 
+    "files": [
+      "dist/",
+      "lib/",
+      "LICENSE",
+      "README.md"
+    ],
+
     "devDependencies": {
         "babel-cli":           "6.9.0",
         "babel-preset-es2015": "6.9.0",
@@ -42,7 +49,7 @@
     "scripts": {
         "test":       "mocha 'tests/**/*.js' --timeout 5000",
         "babelify":   "babel src --presets es2015 --out-dir lib",
-        "browserify": "browserify --require ./lib/map.js --standalone mapper --outfile dist/mapper.js",
+        "browserify": "browserify ./lib/mapper.js --standalone mapper --outfile dist/mapper.js",
         "minify":     "uglifyjs dist/mapper.js --output dist/mapper.min.js",
         "build":      "npm run babelify && npm run browserify && npm run minify"
     }
