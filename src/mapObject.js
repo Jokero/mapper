@@ -10,10 +10,7 @@ const mapProperty = require('./mapProperty');
  *
  * @returns {Object}
  */
-module.exports = function(object, schema, originalObject, path) {
-    originalObject = originalObject || object;
-    path           = path || [];
-    
+module.exports = function(object, schema, originalObject=object, path=[]) {
     const mappedObject = {};
     
     Object.keys(schema).forEach(propertyName => {

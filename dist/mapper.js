@@ -31,9 +31,9 @@ var mapProperty = require('./mapProperty');
  *
  * @returns {Object}
  */
-module.exports = function (object, schema, originalObject, path) {
-    originalObject = originalObject || object;
-    path = path || [];
+module.exports = function (object, schema) {
+    var originalObject = arguments.length <= 2 || arguments[2] === undefined ? object : arguments[2];
+    var path = arguments.length <= 3 || arguments[3] === undefined ? [] : arguments[3];
 
     var mappedObject = {};
 
