@@ -1,6 +1,6 @@
 'use strict';
 
-var mapObject = require('./mapObject');
+const mapObject = require('./mapObject');
 
 /**
  * @param {Object|Object[]} data
@@ -8,11 +8,9 @@ var mapObject = require('./mapObject');
  * 
  * @returns {Object|Object[]}
  */
-module.exports = function (data, schema) {
+module.exports = function(data, schema) {
     if (data instanceof Array) {
-        return data.map(function (object) {
-            return mapObject(object, schema);
-        });
+        return data.map(object => mapObject(object, schema));
     }
 
     return mapObject(data, schema);
