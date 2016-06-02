@@ -54,7 +54,7 @@ const result = mapper(object, schema);
 
 **Parameters**
 
-* `schema` (Object) - Schema which define how to map object
+* `schema` (Object) - Schema which defines how to map object
 
 **Return value**
 
