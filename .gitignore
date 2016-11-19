@@ -2,5 +2,6 @@
 *.iml
 node_modules/
 .npmrc
+.node-version
 *.log
 test.js
