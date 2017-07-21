@@ -136,9 +136,7 @@ const userSchema = {
     id: true, // or '=',
 
     // you can specify function and return custom value
-    fullName: function(fullName, user) {
-        return user.firstName + ' ' + user.lastName;
-    },
+    fullName: (fullName, user) => user.firstName + ' ' + user.lastName,
 
     // take "name" field from "company" object
     companyName: 'company.name', // or '=company.name'
@@ -154,9 +152,7 @@ const userSchema = {
         //   - current object            = user.contacts
         //   - original object           = user
         //   - path as array             = ['contacts', 'facebook']
-        facebook: function(facebook, contacts, user, path) {
-            return user.socialNetworks.facebook;
-        },
+        facebook: (facebook, contacts, user, path) => user.socialNetworks.facebook,
 
         vk: '$.socialNetworks.vk'
     },
@@ -164,9 +160,7 @@ const userSchema = {
     // for arrays use array with schema for item
     friends: [{
         id: true,
-        fullName: function(fullName, friend) {
-            return friend.firstName + ' ' + friend.lastName;
-        }
+        fullName: (fullName, friend) => friend.firstName + ' ' + friend.lastName
     }]
 };
 
