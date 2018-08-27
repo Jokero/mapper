@@ -7,6 +7,10 @@ Transform object from one structure to another by using schema. It's useful in A
 
 **Note:** This module works in browsers and Node.js >= 4.0.
 
+## Demo
+
+Try [demo](https://runkit.com/npm/mapper.js) on RunKit.
+
 ## Installation
 
 ```sh

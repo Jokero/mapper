@@ -43,5 +43,6 @@
     "browserify": "browserify ./lib/mapper.js --standalone mapper --outfile dist/mapper.js",
     "minify": "uglifyjs dist/mapper.js --output dist/mapper.min.js",
     "build": "npm run babelify && npm run browserify && npm run minify"
-  }
+  },
+  "runkitExampleFilename": "examples/index.js"
 }
