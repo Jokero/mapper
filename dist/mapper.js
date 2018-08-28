@@ -5,18 +5,20 @@ var mapObject = require('./mapObject');
 
 /**
  * @param {Object|Object[]} data
- * @param {Object}          schema
+ * @param {Function|Object} schema
  * 
  * @returns {Object|Object[]}
  */
 module.exports = function (data, schema) {
     if (data instanceof Array) {
         return data.map(function (object) {
-            return mapObject(object, schema);
+            var resolvedSchema = schema instanceof Function ? schema(object) : schema;
+            return mapObject(object, resolvedSchema);
         });
     }
 
-    return mapObject(data, schema);
+    var resolvedSchema = schema instanceof Function ? schema(data) : schema;
+    return mapObject(data, resolvedSchema);
 };
 },{"./mapObject":2}],2:[function(require,module,exports){
 'use strict';
@@ -114,8 +116,8 @@ module.exports = function mapProperty(value, schema, parentObject, originalObjec
 var map = require('./map');
 
 /**
- * @param {Object|Object[]} schemaOrData
- * @param {Object}          [schema]
+ * @param {Function|Object|Object[]} schemaOrData
+ * @param {Function|Object}          [schema]
  *
  * @returns {Function|Object|Object[]}
  */

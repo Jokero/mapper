@@ -3,8 +3,8 @@
 const map = require('./map');
 
 /**
- * @param {Object|Object[]} schemaOrData
- * @param {Object}          [schema]
+ * @param {Function|Object|Object[]} schemaOrData
+ * @param {Function|Object}          [schema]
  *
  * @returns {Function|Object|Object[]}
  */

@@ -4,14 +4,18 @@ const mapObject = require('./mapObject');
 
 /**
  * @param {Object|Object[]} data
- * @param {Object}          schema
+ * @param {Function|Object} schema
  * 
  * @returns {Object|Object[]}
  */
 module.exports = function(data, schema) {
     if (data instanceof Array) {
-        return data.map(object => mapObject(object, schema));
+        return data.map(object => {
+            const resolvedSchema = schema instanceof Function ? schema(object) : schema;
+            return mapObject(object, resolvedSchema);
+        });
     }
 
-    return mapObject(data, schema);
+    const resolvedSchema = schema instanceof Function ? schema(data) : schema;
+    return mapObject(data, resolvedSchema);
 };

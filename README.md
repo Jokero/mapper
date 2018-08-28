@@ -42,7 +42,7 @@ There are two ways to use module:
 **Parameters**
 
 * `data` (Object | Object[]) - Object or array of objects to map
-* `schema` (Object) - Schema which defines how to map object
+* `schema` (Function | Object) - Schema which defines how to map object
 
 **Return value**
 
@@ -58,7 +58,7 @@ const result = mapper(object, schema);
 
 **Parameters**
 
-* `schema` (Object) - Schema which defines how to map object
+* `schema` (Function | Object) - Schema which defines how to map object
 
 **Return value**
 
@@ -69,6 +69,43 @@ const mapper = require('mapper.js');
 const map    = mapper(schema);
 
 const result = map(object);
+```
+
+### Dynamic mapping (schema as a function)
+
+```js
+const mapper = require('mapper.js');
+
+const products = [
+    {
+        type: 'book',
+        name: 'The Adventures of Tom Sawyer',
+        description: 'Awesome book',
+        count: 1
+    },
+    {
+        type: 'sugar',
+        description: 'Very tasty',
+        weight: 3000
+    }
+];
+
+const productsSchemas = {
+    book: {
+        name: true,
+        count: true
+    },
+
+    sugar: {
+        weight: true
+    }
+};
+
+// function accepts an object and has to return a schema
+const schema = product => Object.assign({}, productsSchemas[product.type], { type: true });
+
+const result = mapper(products, schema);
+
 ```
 
 ### Example
