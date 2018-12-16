@@ -1,7 +1,7 @@
 {
   "name": "mapper.js",
   "description": "Transform object from one structure to another by using schema. It's useful in API when you want to modify data before sending it to clients",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "name": "Dmitry Kirilyuk",
     "email": "gk.joker@gmail.com"
