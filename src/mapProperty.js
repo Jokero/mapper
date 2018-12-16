@@ -25,23 +25,23 @@ module.exports = function mapProperty(value, schema, parentObject, originalObjec
         return schema(value, parentObject, originalObject, path);
     }
 
-    if (schema instanceof Array && value instanceof Array) {
-        const mappedArray = [];
-        const itemSchema  = schema[0];
+    if (schema instanceof Array) {
+        if (value instanceof Array) {
+            const mappedArray = [];
+            const itemSchema  = schema[0];
 
-        value.forEach((item, i) => {
-            const itemPath   = path.concat(i);
-            const mappedItem = mapProperty(item, itemSchema, value, originalObject, itemPath);
+            value.forEach((item, i) => {
+                const itemPath   = path.concat(i);
+                const mappedItem = mapProperty(item, itemSchema, value, originalObject, itemPath);
 
-            if (mappedItem !== undefined) {
-                mappedArray.push(mappedItem);
-            }
-        });
+                if (mappedItem !== undefined) {
+                    mappedArray.push(mappedItem);
+                }
+            });
 
-        return mappedArray;
-    }
-
-    if (schema instanceof Object) {
+            return mappedArray;
+        }
+    } else if (schema instanceof Object) {
         const mapObject = require('./mapObject');
         return mapObject(value, schema, originalObject, path);
     }
